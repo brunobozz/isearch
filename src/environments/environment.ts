@@ -3,14 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+  GCS_API_KEY: 'AIzaSyBnbZEBGZAS2xy_DvnuC42J8zScgaCpHbs',
+  GCS_API_URL: 'https://www.googleapis.com/customsearch/v1',
+  GCS_ID: '3239e8cad51a89811',
+
+};
