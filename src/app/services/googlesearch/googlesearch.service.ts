@@ -10,7 +10,7 @@ import { environment } from "src/environments/environment";
 
 export class GooglesearchService {
 
-  private query: string;
+  private term: string;
   private API_KEY: string = environment.GCS_API_KEY;
   private API_URL: string = environment.GCS_API_URL;
   private GCS_ID: string = environment.GCS_ID;
@@ -19,8 +19,8 @@ export class GooglesearchService {
 
   constructor(private http: HttpClient) { }
 
-  getSearch(query: string): Observable<any> {
-    return this.http.get(this.URL + query);
+  getSearch(term: string): Observable<any> {
+    return this.http.get(this.URL + term);
   }
 
 }

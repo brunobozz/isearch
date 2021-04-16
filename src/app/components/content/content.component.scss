@@ -1,0 +1,22 @@
+.comp-content {
+  padding: 20px;
+  width: 100%;
+  position: fixed;
+  right: 0;
+  height: calc(100vh - 56px);
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+@media only screen and (max-width: 992px) {
+  .comp-content {
+    width: calc(100vw - 64px);
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .comp-content {
+    width: 100vw;
+    padding: 5px;
+  }
+}

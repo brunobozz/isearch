@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GooglesearchService } from 'src/app/services/googlesearch/googlesearch.service';
 
 @Component({
   selector: 'app-insta-search',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstaSearchComponent implements OnInit {
 
-  constructor() { }
+  private profiles: any[] = [];
+
+  constructor(
+    private GooglesearchService: GooglesearchService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  public searchTerm(term: string) {
+    this.GooglesearchService.getSearch(term).subscribe((res: any) => {
+      this.profiles = res
+      console.log(this.profiles)
+    })
   }
 
 }
