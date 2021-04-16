@@ -15,12 +15,12 @@ export class GooglesearchService {
   private API_URL: string = environment.GCS_API_URL;
   private GCS_ID: string = environment.GCS_ID;
 
-  private URL: string = this.API_URL + '?key=' + this.API_KEY + '&cx=' + this.GCS_ID + '&lr=pt&start=1&q=';
+  private URL: string = this.API_URL + '?key=' + this.API_KEY + '&cx=' + this.GCS_ID + '&lr=pt';
 
   constructor(private http: HttpClient) { }
 
-  getSearch(term: string): Observable<any> {
-    return this.http.get(this.URL + term);
+  getSearch(term: string, start: string): Observable<any> {
+    return this.http.get(this.URL + "&start=" + start + "&q=" + term);
   }
 
 }
