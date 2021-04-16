@@ -1,21 +1,28 @@
-<form>
-  <div class="row">
-    <div class="col">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Search Term</label>
+<div class="d-flex justify-content-center">
+  <div style="width: 600px">
+    <div class="text-center mb-5 mt-3">
+      <h1>Insta Search</h1>
+    </div>
+    <div class="mb-3">
+      <div class="input-group mb-3">
         <input
           type="text"
           class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="search"
-          placeholder="Search"
+          placeholder=""
+          aria-label="Search"
+          #search
         />
+        <button class="btn btn-primary" (click)="searchTerm(search.value)">
+          Button
+        </button>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-12 text-right">
-      <button class="btn btn-primary">Buscar</button>
-    </div>
+</div>
+
+<div class="container">
+  <div ngFor="let profile of profiles.items">
+    <h2>Título</h2>
+    <p>valor 1</p>
   </div>
-</form>
+</div>
