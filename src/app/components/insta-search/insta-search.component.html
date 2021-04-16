@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center">
-  <div style="width: 600px">
+  <form (submit)="searchTerm(search.value)" action="#" style="width: 600px">
     <div class="text-center mb-5 mt-3">
       <h1>Insta Search</h1>
     </div>
@@ -12,17 +12,18 @@
           aria-label="Search"
           #search
         />
-        <button class="btn btn-primary" (click)="searchTerm(search.value)">
-          Button
+        <button class="btn btn-primary" type="submit">
+          Buscar
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 
 <div class="container">
-  <div ngFor="let profile of profiles.items">
-    <h2>Título</h2>
-    <p>valor 1</p>
+  <div class="profile" *ngFor="let profile of profiles">
+    <h3>{{ profile.title }}</h3>
+    <a [href]="profile.link" target="_blank">{{ profile.link }}</a>
+    <p>{{ profile.snippet }}</p>
   </div>
 </div>

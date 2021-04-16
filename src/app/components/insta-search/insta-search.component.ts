@@ -8,7 +8,7 @@ import { GooglesearchService } from 'src/app/services/googlesearch/googlesearch.
 })
 export class InstaSearchComponent implements OnInit {
 
-  private profiles: any[] = [];
+  public profiles: any[] = [];
 
   constructor(
     private GooglesearchService: GooglesearchService
@@ -19,7 +19,8 @@ export class InstaSearchComponent implements OnInit {
 
   public searchTerm(term: string) {
     this.GooglesearchService.getSearch(term).subscribe((res: any) => {
-      this.profiles = res
+      this.profiles = res.items
+      console.log(res)
       console.log(this.profiles)
     })
   }
