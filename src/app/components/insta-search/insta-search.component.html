@@ -18,21 +18,25 @@
   </form>
 </div>
 
-<!-- <div class="container">
-  <div class="profile" *ngFor="let profile of profiles">
-    <h3>{{ profile.title }}</h3>
-    <a [href]="profile.link" target="_blank">{{ profile.link }}</a>
-    <p>{{ profile.snippet }}</p>
-  </div>
-</div> -->
-
-<div *ngIf="email" class="container">
+<div *ngIf="emailsLista" class="container">
   <button class="btn btn-outline-primary mb-3" (click)="carregarMais()">
     Carregar Mais
   </button>
   <div class="card">
     <div class="card-body">
-      {{ email }}
+      <span *ngFor="let item of emailsArray">{{ item }}<br /></span>
+      <!-- {{ emailsArray }} -->
     </div>
+  </div>
+</div>
+<button class="btn btn-outline-primary mb-3" (click)="carregarMais()">
+  Carregar Mais
+</button>
+
+<div class="container">
+  <div class="profile" *ngFor="let profile of profiles">
+    <h3>{{ profile.title }}</h3>
+    <a [href]="profile.link" target="_blank">{{ profile.link }}</a>
+    <p>{{ profile.snippet }}</p>
   </div>
 </div>
